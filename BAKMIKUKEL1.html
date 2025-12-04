@@ -1,0 +1,583 @@
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAKMI KUKEL AJIBUN - Mienya Beda, Sensasi Rasanya Juara!</title>
+    <!-- Memuat Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Mengatur font utama */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+        :root {
+            --color-cream: #F5F5DC;
+            --color-brown-soft: #A0522D; /* Sienna */
+            --color-caramel: #D2B48C; /* Tan */
+            --color-white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-cream);
+        }
+
+        .hero-bg {
+            /* Pastikan gambar placeholder juga menggunakan nama yang benar di URL */
+            background-image: url(bakmi\ chili\ oil.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Custom Colors from Root Variables */
+        .bg-caramel { background-color: var(--color-caramel); }
+        .text-brown-soft { color: var(--color-brown-soft); }
+        .bg-brown-soft { background-color: var(--color-brown-soft); }
+        .text-cream { color: var(--color-cream); }
+        .bg-cream { background-color: var(--color-cream); }
+
+        .menu-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            border: 4px solid var(--color-caramel);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-circle:hover {
+            transform: scale(1.05);
+        }
+
+        .card-menu {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-menu:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGASI BAR (HEADER) -->
+    <header class="bg-white/90 shadow-lg sticky top-0 z-50 backdrop-blur-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+            <!-- Logo/Nama Usaha -->
+            <div class="flex items-center space-x-2">
+                <img src="logo.jpg" alt="Logo Bakmi Kukel Ajibun" class="h-10 w-10 rounded-full">
+                <a href="#hero" class="text-2xl font-bold text-brown-soft font-['Playfair_Display']">Bakmi Kukel Ajibun</a>
+            </div>
+
+            <!-- Menu Navigasi (Desktop) -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-brown-soft hover:text-caramel font-medium transition duration-150">Home</a>
+                <a href="#about" class="text-brown-soft hover:text-caramel font-medium transition duration-150">Tentang Kami</a>
+                <a href="#menu" class="text-brown-soft hover:text-caramel font-medium transition duration-150">Daftar Menu</a>
+                <a href="#testimoni" class="text-brown-soft hover:text-caramel font-medium transition duration-150">Testimoni</a>
+                <a href="#contact" class="text-brown-soft hover:text-caramel font-medium transition duration-150">Kontak</a>
+            </div>
+
+            <!-- CTA Utama (Desktop) -->
+            <div class="hidden md:block">
+                <a href="https://wa.me/6289603096629" target="_blank" class="bg-brown-soft text-white px-5 py-2 rounded-full font-semibold hover:bg-caramel transition duration-300 shadow-md">
+                    Order Now <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-brown-soft text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#hero" class="block py-2 px-4 text-brown-soft hover:bg-caramel/20 border-b border-caramel/30" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
+            <a href="#about" class="block py-2 px-4 text-brown-soft hover:bg-caramel/20 border-b border-caramel/30" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Tentang Kami</a>
+            <a href="#daftarmenu" class="block py-2 px-4 text-brown-soft hover:bg-caramel/20 border-b border-caramel/30" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Daftar Menu</a>
+            <a href="#testimoni" class="block py-2 px-4 text-brown-soft hover:bg-caramel/20 border-b border-caramel/30" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Testimoni</a>
+            <a href="#contact" class="block py-2 px-4 text-brown-soft hover:bg-caramel/20" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Kontak</a>
+            <a href="https://linktr.ee/BakmiKUKELOrder" target="_blank" class="block bg-brown-soft text-white text-center py-3 font-semibold hover:bg-caramel">
+                Order Now <i class="fas fa-arrow-right ml-1 text-sm"></i>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION (Bagian Atas Utama) -->
+        <section id="hero" class="hero-bg min-h-[80vh] flex items-center justify-center p-8 relative">
+            <!-- Overlay untuk kontras -->
+            <div class="absolute inset-0 bg-black/30"></div>
+            
+            <div class="text-center z-10 p-6 bg-white/80 rounded-xl shadow-2xl max-w-3xl">
+                <h1 class="text-5xl md:text-7xl font-['Playfair_Display'] font-extrabold text-brown-soft leading-tight mb-4 animate-fadeInDown">
+                    BAKMI KUKEL <span class="text-caramel">AJIBUN</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-brown-soft font-semibold mb-8 italic">
+                    "Mienya Beda, Sensasi Rasanya Juara!"
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    
+
+                    </a>
+                    <a href="#menu" class="bg-white text-brown-soft px-8 py-3 rounded-full text-lg font-bold border-2 border-brown-soft hover:bg-caramel hover:text-white transition duration-300 shadow-lg transform hover:scale-105">
+                        <i class="fas fa-book-open mr-2"></i> Lihat Menu
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SEJARAH UMKM & WHY US? - KOREKSI JUDUL -->
+        <section id="about" class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-['Playfair_Display'] font-bold text-center text-brown-soft mb-12">
+                Tentang Kami 
+            </h2>
+
+            <!-- Sejarah UMKM -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-3xl font-['Playfair_Display'] font-semibold text-brown-soft mb-4">Perjalanan Bakmi Kukel Ajibun</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Berawal dari cinta sederhana pada semangkuk mie ayam, lahirlah Bakmi Kukel Ajibun. 
+                        Dibuat di dapur sederhana, dengan tekad untuk menciptakan produk yang berkualitas.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Dengan komitmen untuk menghadirkan bakmi berkualitas tinggi yang dapat dinikmati semua kalangan, Bakmi Kukel terus tumbuh dan berkembang. Kami percaya, setiap mangkuk bakmi yang dibuat dengan sepenuh hati akan selalu menghadirkan kebahagiaan. Dengan resep dan inovasi rasa yang pas, kami akan terus berupaya untuk menjadi destinasi bakmi favorit Anda.
+                    </p>
+                </div>
+                <div class="order-1 md:order-2 rounded-xl overflow-hidden shadow-2xl">
+                    <img src="outlet_hd.png" alt="Foto Outlet Bakmi Kukel Ajibun" class="w-full h-auto object-cover transform transition duration-500 hover:scale-105">
+                </div>
+            </div>
+
+            <!-- Why Us? (Poin-poin dalam Card) -->
+            <div class="text-center mb-8">
+                <h3 class="text-3xl font-['Playfair_Display'] font-semibold text-brown-soft mb-8">Jaminan Kualitas Bakmi Kukel Ajibun</h3>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Card 1: Bahan Fresh & Homecooked -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-brown-soft text-center card-menu">
+                    <i class="fas fa-seedling text-3xl text-brown-soft mb-3"></i>
+                    <p class="font-bold text-lg text-brown-soft">Bahan Fresh & 100% Homemade</p>
+                    <p class="text-sm text-gray-600">Tanpa pengawet dan Pewarna.</p>
+                </div>
+                <!-- Card 2: Harga Murah -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-brown-soft text-center card-menu">
+                    <i class="fas fa-tags text-3xl text-brown-soft mb-3"></i>
+                    <p class="font-bold text-lg text-brown-soft">Harga Bersahabat</p>
+                    <p class="text-sm text-gray-600">Kualitas bintang lima, harga kaki lima.</p>
+                </div>
+                <!-- Card 3: Banyak Varian -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-brown-soft text-center card-menu">
+                    <i class="fas fa-utensils text-3xl text-brown-soft mb-3"></i>
+                    <p class="font-bold text-lg text-brown-soft">Banyak Variasi Menu</p>
+                    <p class="text-sm text-gray-600">Bakmi, Pangsit Goreng/Pangsit Rebus, dan Dimsum.</p>
+                </div>
+                <!-- Card 4: Halal -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-brown-soft text-center card-menu">
+                    <i class="fas fa-check-circle text-3xl text-brown-soft mb-3"></i>
+                    <p class="font-bold text-lg text-brown-soft">100% Halal</p>
+                    <p class="text-sm text-gray-600">Terjamin kebersihan dan kehalalannya.</p>
+                </div>
+                <!-- Card 5: Cepat & Hangat -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-brown-soft text-center card-menu">
+                    <i class="fas fa-truck-fast text-3xl text-brown-soft mb-3"></i>
+                    <p class="font-bold text-lg text-brown-soft">Cepat & Hangat</p>
+                    <p class="text-sm text-gray-600">Pesanan disajikan dengan cepat.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. BEST SELLER / RECOMMENDED (Di atas Menu) -->
+        <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 bg-caramel/30 rounded-2xl shadow-inner my-16">
+            <h2 class="text-4xl font-['Playfair_Display'] font-bold text-center text-brown-soft mb-12">
+                Favorit Pelanggan (Best Seller) 
+            </h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <!-- Best Seller Card 1 -->
+                <div class="w-full sm:w-80 bg-white p-6 rounded-xl shadow-xl text-center border-b-8 border-brown-soft card-menu">
+                    <div class="menu-circle mx-auto mb-4" style="background-image: url('bakmi\ chili\ oil.jpg')"></div>
+                    <h4 class="text-xl font-bold text-brown-soft mb-2">Bakmi Ayam Chili Oil</h4>
+                    <p class="text-sm text-gray-700 italic">"Favorit sepanjang masa, ludes tiap hari!"</p>
+                </div>
+                <!-- Best Seller Card 2 -->
+                <div class="w-full sm:w-80 bg-white p-6 rounded-xl shadow-xl text-center border-b-8 border-brown-soft card-menu">
+                    <div class="menu-circle mx-auto mb-4" style="background-image: url('dimsum\ mentai.jpg')"></div>
+                    <h4 class="text-xl font-bold text-brown-soft mb-2">Dimsum Mentai</h4>
+                    <p class="text-sm text-gray-700 italic">"Saus mentai premiumnya juara!"</p>
+                </div>
+                <!-- Best Seller Card 3 -->
+                <div class="w-full sm:w-80 bg-white p-6 rounded-xl shadow-xl text-center border-b-8 border-brown-soft card-menu">
+                    <div class="menu-circle mx-auto mb-4" style="background-image: url('pangsit\ kuah.jpg')"></div>
+                    <h4 class="text-xl font-bold text-brown-soft mb-2">Pangsit Kuah</h4>
+                    <p class="text-sm text-gray-700 italic">"Pendamping wajib, dengan rasa kuah yang bikin ketagihan!"</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 3. OUR MENU (Bagian Menu Besar) -->
+        <section id="menu" class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-['Playfair_Display'] font-bold text-center text-brown-soft mb-16">
+                Our Menu 
+            </h2>
+
+            <!-- Kategori 1: Bakmi/Nasi Ayam -->
+            <div class="mb-12">
+                <h3 class="text-3xl font-['Playfair_Display'] font-semibold text-brown-soft border-b-2 border-caramel pb-2 mb-8">
+                    Bakmi Ayam (Main Course)
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Item Bakmi Original -->
+                    <div class="bg-white p-4 rounded-xl shadow-md text-center card-menu">
+                        <div class="menu-circle mx-auto mb-3" style="background-image: url('bakmi\ ori.jpg')"></div>
+                        <p class="font-bold text-lg text-brown-soft">Bakmi Ayam Original</p>
+                        <p class="text-caramel font-semibold">Rp 15.000</p>
+                    </div>
+                    <!-- Item Bakmi Chili Oil -->
+                    <div class="bg-white p-4 rounded-xl shadow-md text-center card-menu">
+                        <div class="menu-circle mx-auto mb-3" style="background-image: url('bakmi\ chili\ oil.jpg')"></div>
+                        <p class="font-bold text-lg text-brown-soft">Bakmi Ayam Chili Oil</p>
+                        <p class="text-caramel font-semibold">Rp 18.000</p>
+                    </div>
+                    <!-- Item Bakmi Jamur -->
+                    <div class="bg-white p-4 rounded-xl shadow-md text-center card-menu">
+                        <div class="menu-circle mx-auto mb-3" style="background-image: url('bakmi\ ori.jpg')"></div>
+                        <p class="font-bold text-lg text-brown-soft">Bakmi Ayam Jamur</p>
+                        <p class="text-caramel font-semibold">Rp 18.000</p>
+                    </div>
+                    <!-- Item Bakmi Lada Hitam -->
+                    <div class="bg-white p-4 rounded-xl shadow-md text-center card-menu">
+                        <div class="menu-circle mx-auto mb-3" style="background-image: url('bakmi\ ori.jpg')"></div>
+                        <p class="font-bold text-lg text-brown-soft">Bakmi Ayam Lada Hitam</p>
+                        <p class="text-caramel font-semibold">Rp 23.000</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kategori 2: Pangsit -->
+            <div class="mb-12">
+                <h3 class="text-3xl font-['Playfair_Display'] font-semibold text-brown-soft border-b-2 border-caramel pb-2 mb-8">
+                    Pangsit dan Dimsum (Side Dish)
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Item Pangsit Goreng -->
+                    <div class="bg-white p-4 rounded-xl shadow-md text-center card-menu">
+                        <div class="menu-circle mx-auto mb-3" style="background-image: url('pangsit\ goreng.jpg')"></div>
+                        <p class="font-bold text-lg text-brown-soft">Pangsit Goreng</p>
+                        <p class="text-caramel font-semibold">Rp 10.000 (Isi 3)</p>
+            
+                    </div>
+                    <!-- Item Pangsit Kuah -->
+                    <div class="bg-white p-4 rounded-xl shadow-md text-center card-menu">
+                        <div class="menu-circle mx-auto mb-3" style="background-image: url('pangsit\ kuah.jpg')"></div>
+                        <p class="font-bold text-lg text-brown-soft">Pangsit Kuah</p>
+                        <p class="text-caramel font-semibold">Rp 15.000 (Isi 5)</p>
+                    </div>
+                    <!-- Item Pangsit Chili Oil -->
+                    <div class="bg-white p-4 rounded-xl shadow-md text-center card-menu">
+                        <div class="menu-circle mx-auto mb-3" style="background-image: url('pangsit\ chili\ oil\ 5.jpg')"></div>
+                        <p class="font-bold text-lg text-brown-soft">Pangsit Chili Oil</p>
+                        <p class="text-caramel font-semibold">Rp 15.000 (Isi 4)</p>
+                    </div>
+                    <!-- Item Dimsum Original Isi 3 -->
+                    <div class="bg-white p-4 rounded-xl shadow-md text-center card-menu">
+                        <div class="menu-circle mx-auto mb-3" style="background-image: url('dimsum\ ori\ 3.jpg')"></div>
+                        <p class="font-bold text-lg text-brown-soft">Dimsum Original</p>
+                        <p class="text-caramel font-semibold">Rp 10.000 (Isi 3)</p>
+                    </div>
+                    <!-- Item Dimsum Original Isi 5 -->
+                    <div class="bg-white p-4 rounded-xl shadow-md text-center card-menu">
+                        <div class="menu-circle mx-auto mb-3" style="background-image: url('dimsum\ ori\ 5.jpg')"></div>
+                        <p class="font-bold text-lg text-brown-soft">Dimsum Original</p>
+                        <p class="text-caramel font-semibold">Rp 15.000 (Isi 5)</p>
+                    </div>
+                    <!-- Item Dimsum Chili Oil -->
+                    <div class="bg-white p-4 rounded-xl shadow-md text-center card-menu">
+                        <div class="menu-circle mx-auto mb-3" style="background-image: url('dimsum\ chili\ oil\ 3.jpg')"></div>
+                        <p class="font-bold text-lg text-brown-soft">Dimsum Chili Oil</p>
+                        <p class="text-caramel font-semibold">Rp 15.000 (Isi 4)</p>
+                    </div>
+                    <!-- Item Dimsum Mentai -->
+                    <div class="bg-white p-4 rounded-xl shadow-md text-center card-menu">
+                        <div class="menu-circle mx-auto mb-3" style="background-image: url('dimsum\ mentai.jpg')"></div>
+                        <p class="font-bold text-lg text-brown-soft">Dimsum Mentai</p>
+                        <p class="text-caramel font-semibold">Rp 15.000 (Isi 4)</p>
+                     </div>
+                </div>
+            </div>
+
+            <!-- Kategori 3: Lainnya Add On (Opsi Tambahan Untuk Menemani Semangkuk Bakmi) -->
+           <div class="mb-12">
+                <h3 class="text-3xl font-['Playfair_Display'] font-semibold text-brown-soft border-b-2 border-caramel pb-2 mb-8">
+                    Add On (Opsi Tambahan Untuk Menemani Semangkuk Bakmi)
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Item Bakso Kuah -->
+                    <div class="bg-white p-4 rounded-xl shadow-md text-center card-menu">
+                        <div class="menu-circle mx-auto mb-3" style="background-image: url('bakso\ 3.jpg')"></div>
+                        <p class="font-bold text-lg text-brown-soft">Bakso Kuah</p>
+                        <p class="text-caramel font-semibold">Rp 5.000 (Isi 2)</p>
+                    </div>
+                    <!-- Item Pangsit Rebus -->
+                    <div class="bg-white p-4 rounded-xl shadow-md text-center card-menu">
+                        <div class="menu-circle mx-auto mb-3" style="background-image: url('pangsit\ kuah.jpg')"></div>
+                        <p class="font-bold text-lg text-brown-soft">Pangsit Rebus</p>
+                        <p class="text-caramel font-semibold">Rp 5.000 (Isi 2)</p>
+                    </div>
+                </div>
+            </div>
+
+                    <!-- Kategori 4: Minuman -->
+           <div class="mb-12">
+                <h3 class="text-3xl font-['Playfair_Display'] font-semibold text-brown-soft border-b-2 border-caramel pb-2 mb-8">
+                    Minuman
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Item Es Teh Manis -->
+                    <div class="bg-white p-4 rounded-xl shadow-md text-center card-menu">
+                        <div class="menu-circle mx-auto mb-3" style="background-image: url('es\ teh.jpg')"></div>
+                        <p class="font-bold text-lg text-brown-soft">Es Teh Manis</p>
+                        <p class="text-caramel font-semibold">Rp 5.000</p>
+                    </div>
+                    <!-- Item Es Jeruk -->
+                    <div class="bg-white p-4 rounded-xl shadow-md text-center card-menu">
+                        <div class="menu-circle mx-auto mb-3" style="background-image: url('es\ jeruk.jpg')"></div>
+                        <p class="font-bold text-lg text-brown-soft">Es Jeruk</p>
+                        <p class="text-caramel font-semibold">Rp 8.000</p>
+                    </div>
+        
+                    </div>
+                    <!-- Placeholder untuk mengisi grid agar tetap rapi jika ada sisa slot -->
+                    <div class="hidden lg:block"></div> 
+                    <div class="hidden lg:block"></div>
+                    <div class="hidden sm:block lg:block"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Terima Pesanan -->
+        <section id="delivery" class="bg-brown-soft text-white py-16 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-4xl font-['Playfair_Display'] font-bold mb-4">
+                        TERIMA PESANAN
+                    </h2>
+                    <p class="text-lg mb-6 opacity-90">
+                        Nikmati Bakmi Kukel Ajibun di mana pun Anda berada. Pesan dengan cepat dan mudah melalui platform favorit Anda.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://api.whatsapp.com/send/?phone=6289603096629&text&type=phone_number&app_absent=0" target="_blank" class="bg-white text-brown-soft px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition duration-300 shadow-lg flex items-center">
+                            <i class="fab fa-whatsapp text-2xl text-brown-soft mr-4"></i> Whatsapp
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/3 rounded-xl overflow-hidden shadow-2xl">
+                    <img src="terima pesanan.png" alt="Ilustrasi Pengiriman Makanan" class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. SOCIAL PROOF (Testimoni Pelanggan) -->
+        <section id="testimoni" class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-['Playfair_Display'] font-bold text-center text-brown-soft mb-12">
+                Apa Kata Pelanggan Kami?
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-10">
+                <!-- Testimoni 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-caramel">
+                    <div class="flex items-start mb-3">
+                        <img src="https://placehold.co/50x50/A0522D/F5F5DC?text=R" alt="Foto Rizky" class="w-12 h-12 rounded-full mr-4 object-cover bg-brown-soft">
+                        <div>
+                            <p class="font-bold text-lg text-brown-soft">Rizky</p>
+                            <div class="text-yellow-500 text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Bakminya beneran enak banget, Mie-nya beda, porsinya banyak! Bumbu ayamnya gurih, dimakan pake chili oil-nya jadi makin nampol! Selalu jadi pilihan kalau lagi lapar."
+                    </p>
+                </div>
+                <!-- Testimoni 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-caramel">
+                    <div class="flex items-start mb-3">
+                        <img src="https://placehold.co/50x50/A0522D/F5F5DC?text=S" alt="Foto Sari" class="w-12 h-12 rounded-full mr-4 object-cover bg-brown-soft">
+                        <div>
+                            <p class="font-bold text-lg text-brown-soft">Sari</p>
+                            <div class="text-yellow-500 text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Dimsumnya lembut banget, topping mentainya nagih! Cocok buat cemilan sore. Anak-anak juga suka. Pelayanan cepat dan packagingnya oke banget!"
+                    </p>
+                </div>
+            </div>
+
+            <!-- CTA untuk Testimoni -->
+            <div class="text-center mt-8">
+                <a href="https://forms.gle/3RjV3PP5CeQvktos5" target="_blank" class="inline-block bg-caramel text-brown-soft px-8 py-3 rounded-full font-bold hover:bg-brown-soft hover:text-white transition duration-300 shadow-md">
+                    <i class="fas fa-pencil-alt mr-2"></i> Berikan Testimoni Kamu!
+                </a>
+            </div>
+        </section>
+
+        <!-- 8. CONTACT & LOCATION -->
+        <section id="contact" class="bg-caramel/50 py-16 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-['Playfair_Display'] font-bold text-center text-brown-soft mb-12">
+                    Kontak & Lokasi Kami
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Informasi Kontak -->
+                    <div>
+                        
+                        <div class="space-y-4">
+                            <!-- Alamat -->
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-2xl text-brown-soft mr-4 pt-1"></i>
+                                <div>
+                                    <p class="font-bold text-brown-soft">Alamat Outlet</p>
+                                    <p class="text-gray-700">Jl. Palakali No.56, RT.1/RW.7, Kukusan, Kecamatan Beji, Kota Depok, Jawa Barat 16425
+</p>
+                                </div>
+                            </div>
+                            <!-- Jam Operasional -->
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-2xl text-brown-soft mr-4 pt-1"></i>
+                                <div>
+                                    <p class="font-bold text-brown-soft">Jam Operasional</p>
+                                    <p class="text-gray-700">Senin - Minggu: 10.00 - 22.00 WIB</p>
+                                    <p class="text-sm text-gray-600 italic">(Jumat Buka Jam 13.00)</p>
+                                </div>
+                            </div>
+                            <!-- WhatsApp -->
+                            <div class="flex items-center">
+                                <i class="fab fa-whatsapp text-2xl text-brown-soft mr-4"></i>
+                                <a href="https://wa.me/6289603096629" target="_blank" class="text-brown-soft hover:text-gray-900 font-semibold transition duration-150">
+                                    +62 896-0309-7890 (Bunda Irma)
+                                </a>
+                            </div>
+                            <!-- Instagram (Koreksi Handle) -->
+                            <div class="flex items-center">
+                                <i class="fab fa-instagram text-2xl text-brown-soft mr-4"></i>
+                                <a href="https://instagram.com/bakmikukelajibun" target="_blank" class="text-brown-soft hover:text-gray-900 font-semibold transition duration-150">
+                                    @bakmikukelajibun
+                                </a>
+                            </div>
+                            <!-- Tiktok (Koreksi Handle) -->
+                            <div class="flex items-center">
+                                <i class="fab fa-tiktok text-2xl text-brown-soft mr-4"></i>
+                                <a href="https://tiktok.com/@bakmikukel.ajibun" target="_blank" class="text-brown-soft hover:text-gray-900 font-semibold transition duration-150">
+                                    @bakmikukel.ajibun
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Google Maps Embed -->
+                    <div>
+                        <h3 class="text-2xl font-semibold text-brown-soft mb-4">Peta Lokasi</h3>
+                        <div class="rounded-xl overflow-hidden shadow-xl aspect-w-16 aspect-h-9">
+                            <!-- Menggunakan iFrame sederhana untuk mencontoh embed map -->
+                            <!-- Ganti URL ini dengan link embed Google Maps yang sebenarnya -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3965.20265521529!2d106.8164426!3d-6.3678144!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed002bc10e7f%3A0xb54e5cc0ebdd0438!2sBakmi%20Kukel%20Ajibun!5e0!3m2!1sid!2sid!4v1764812389605!5m2!1sid!2sid" 
+                                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">class="rounded-xl"></iframe>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2 text-center italic">Di Sebrang Kelurahan Kukusan</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 9. FOOTER (Sudah dikoreksi warna dan Nama) -->
+    <footer class="bg-brown-soft text-cream py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <!-- Kolom 1: Logo & Copyright -->
+                <div>
+                    <!-- Menggunakan bg-cream agar logo terlihat kontras -->
+                    <img src="logo.jpg" alt="Logo Bakmi Kukel Ajibun Footer" class="h-12 w-12 rounded-full mb-3 bg-cream">
+                    <p class="text-xl font-bold font-['Playfair_Display'] mb-2">Bakmi Kukel Ajibun</p>
+                    <p class="text-sm opacity-80">&copy; 2025 Bakmi Kukel Ajibun. All rights reserved.</p>
+                </div>
+
+                <!-- Kolom 2: Menu Cepat - Koreksi link About menjadi Tentang Kami -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 border-b border-caramel pb-1">Menu Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#hero" class="hover:text-caramel transition duration-150">Home</a></li>
+                        <li><a href="#about" class="hover:text-caramel transition duration-150">Tentang Kami</a></li>
+                        <li><a href="#menu" class="hover:text-caramel transition duration-150">Menu Kami</a></li>
+                        <li><a href="#testimoni" class="hover:text-caramel transition duration-150">Testimoni</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 3: Sosial Media (Koreksi Handle) -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 border-b border-caramel pb-1">Ikuti Kami</h4>
+                    <div class="flex space-x-4 text-2xl">
+                        <a href="https://instagram.com/bakmikukelajibun" target="_blank" class="hover:text-caramel transition duration-150"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com/@bakmikukel.ajibun" target="_blank" class="hover:text-caramel transition duration-150"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/6289603096629" target="_blank" class="hover:text-caramel transition duration-150"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#contact" class="hover:text-caramel transition duration-150"><i class="fas fa-map-marker-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Kolom 4: CTA Kecil -->
+                <div class="flex flex-col items-start md:items-end">
+                    <p class="text-lg font-semibold mb-4">Siap Order Sekarang?</p>
+                    <a href="https://wa.me/6289603096629" target="_blank" class="bg-caramel text-brown-soft px-6 py-3 rounded-full font-bold hover:bg-cream transition duration-300 shadow-md">
+                        <i class="fas fa-arrow-up-right-from-square mr-2"></i> Order Now
+                    </a>
+                </div>
+            </div>
+            <div class="text-center pt-8 border-t border-cream/20">
+                <p class="text-sm opacity-60">Dibuat dengan semangat dan cinta oleh Tim Bakmi Kukel Ajibun.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Smooth Scrolling dan Menu Mobile -->
+    <script>
+        // Smooth Scrolling untuk semua link anchor
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Toggle Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Menutup menu mobile saat mengklik link di dalamnya (diimplementasikan juga di HTML inline)
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Beri sedikit delay agar smooth scroll bekerja sebelum menu hilang
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            });
+        });
+
+    </script>
+</body>
+</html>
